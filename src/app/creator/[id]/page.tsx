@@ -7,7 +7,9 @@ interface CreatorPageProps {
   params: { id: string };
 }
 
-export default function CreatorPage({ params }: CreatorPageProps) {
+export default function CreatorPage({ params }: {
+  params: { id: string };
+}) {
   const { id } = params;
 
   // Later: Fetch creator data from smart contract or backend
