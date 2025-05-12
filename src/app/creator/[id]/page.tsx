@@ -3,14 +3,12 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
-interface CreatorPageProps {
-  params: { id: string };
-}
-
-export default function CreatorPage({ params }: {
-  params: { id: string };
+export default async function CreatorPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
 }) {
-  const { id } = params;
+  const { id } = await params;
 
   // Later: Fetch creator data from smart contract or backend
   const fakeCreator = {
